@@ -37,50 +37,55 @@ public class Rechner {
 
 	public void einlesen() {
 		System.out.println("Bitte gib eine Zahl ein");
-		zahl1 = IO.readchar();
+		zahl1 = IO.readDouble();
 		System.out.println("Bitte gib eine weitere Zahl ein");
-		zahl2 = IO.readchar();
+		zahl2 = IO.readDouble();
 		System.out.println("Bitte gibt einen Operator (+, -, *, /) ein");
-		operator = IO.readchar();
+		operator = IO.readChar();
 	}
 
-	/*
+
 	public boolean berechne() {
  		switch(operator) {
-			case '+'': 
+			case '+': 
 				erg = zahl1+zahl2; 
-				break;
+				return true;
+				break; 
 			case '-': 
 				erg = zahl1-zahl2; 
+				return true; 
 				break;
 			case '*': 
 				erg = zahl1*zahl2; 
+				return true;
 				break;
 			case '/': 
-				erg = zahl1/zahl2; 
+				erg = zahl1/zahl2;
+				return true; 
 				break;
 			default:
-				defaultSystem.out.println("Falsche Eingabe des Operator-Zeichens");
+				return false;
 				break;
 			}
 	}
-	*/
 
+
+	/*
 	public boolean berechne() {
 		if (operator == '+') {
 			erg = zahl1+zahl2; 
 			return true;
 		} else {
 			if (operator == '-'){
-				ergebnis = zahl1-zahl2; 
+				erg = zahl1-zahl2; 
 				return true;
 			} else {
 				if (operator == '*'){
-					ergebnis = zahl1*zahl2; 
+					erg = zahl1*zahl2; 
 					return true;
 				} else {
 					if (operator == '/') {
-						ergebnis = zahl1/zahl2; 
+						erg = zahl1/zahl2; 
 						return true;
 					} else {
 						return false;
@@ -89,6 +94,7 @@ public class Rechner {
 			}
 		}
 	}
+	*/
 	
 	
 	public void ausgeben() {
