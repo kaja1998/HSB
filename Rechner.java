@@ -12,7 +12,6 @@ main()
 	Wiederholung bis Nutzer „n“ eingibt 
 */
 
-
 public class Rechner {
 
 	// Attribute
@@ -20,28 +19,15 @@ public class Rechner {
 	double zahl2;
 	char operator;
 	double erg;
-	char eingabejn;
-
-
-	public static void main(String[] args) {
-		Rechner taschenrechner = new Rechner();
-		do{
-			taschenrechner.einlesen();
-			taschenrechner.berechne();
-			taschenrechner.ausgeben();
-			System.out.println("Nochmal? (j/n) ");
-			eingabejn = IO.readChar();
-		}while (eingabejn != 'n');
-	}
 
 
 	public void einlesen() {
 		System.out.println("Bitte gib eine Zahl ein");
-		zahl1 = IO.readDouble();
+		this.zahl1 = IO.readDouble();
 		System.out.println("Bitte gib eine weitere Zahl ein");
-		zahl2 = IO.readDouble();
+		this.zahl2 = IO.readDouble();
 		System.out.println("Bitte gibt einen Operator (+, -, *, /) ein");
-		operator = IO.readChar();
+		this.operator = IO.readChar();
 	}
 
 
@@ -50,23 +36,17 @@ public class Rechner {
 			case '+': 
 				erg = zahl1+zahl2; 
 				return true;
-				break; 
 			case '-': 
 				erg = zahl1-zahl2; 
 				return true; 
-				break;
 			case '*': 
 				erg = zahl1*zahl2; 
 				return true;
-				break;
 			case '/': 
 				erg = zahl1/zahl2;
 				return true; 
-				break;
-			default:
-				return false;
-				break;
 			}
+		return false;
 	}
 
 
@@ -98,7 +78,10 @@ public class Rechner {
 	
 	
 	public void ausgeben() {
-		System.out.println("Das Ergebnis ist:" + erg);
+		if (berechne()) {
+			System.out.println("Das Ergebnis ist:" + erg);
+		} else {
+			System.out.println("Fehlerhafte Eingabe");
 		}
-
+	}
 }
