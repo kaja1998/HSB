@@ -23,11 +23,11 @@ public class Rechner {
 
 	public void einlesen() {
 		System.out.println("Bitte gib eine Zahl ein");
-		this.zahl1 = IO.readDouble();
+		zahl1 = IO.readDouble();
 		System.out.println("Bitte gib eine weitere Zahl ein");
-		this.zahl2 = IO.readDouble();
+		zahl2 = IO.readDouble();
 		System.out.println("Bitte gibt einen Operator (+, -, *, /) ein");
-		this.operator = IO.readChar();
+		operator = IO.readChar();
 	}
 
 
